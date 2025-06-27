@@ -1,0 +1,81 @@
+# Xcode
+
+# Build products
+
+build/
+DerivedData/
+
+# User settings
+
+\*.xcuserdata/
+\*.xcscmblueprint
+\*.xccheckout
+\*.xcuserstate
+
+# Workspace
+
+\*.xcworkspace
+!default.xcworkspace
+
+# Project file locks
+
+\*.lock
+
+# Provisioning
+
+\*.codesign
+
+# Xcode 8 and earlier
+
+\*.pbxuser
+!default.pbxuser
+\*.mode1v3
+!default.mode1v3
+\*.mode2v3
+!default.mode2v3
+\*.perspectivev3
+!default.perspectivev3
+
+# Xcode 9+. DerivedData and workspace are enough
+
+# Swift Package Manager
+
+.build/
+
+# CocoaPods
+
+Pods/
+
+# Carthage
+
+Carthage/Build/
+
+# fastlane
+
+fastlane/report.xml
+fastlane/Preview\.html
+
+# Playgrounds
+
+timeline.xctimeline
+playground.xcworkspace
+
+# Other
+
+.DS\_Store
+\*.swp
+\*.lock
+.idea/
+
+# Logs\*.log
+
+# Temporary files
+
+\*.orig
+\*\~
+
+# Certificates and keys
+
+\*.cer
+\*.key
+\*.mobileprovision
