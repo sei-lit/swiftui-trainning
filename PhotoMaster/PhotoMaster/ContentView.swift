@@ -1,23 +1,20 @@
-//
-//  ContentView.swift
-//  PhotoMaster
-//
-//  Created by 大森青 on 2025/06/29.
-//
 
 import SwiftUI
 import PhotosUI
 
 struct ContentView: View {
+    let client = ImageTitleClient()
+    
     @State var selectedItem: PhotosPickerItem?
     @State var selectedImage: Image? = nil
     @State var text: String = ""
     @State var showAlert: Bool = false
-    
+    @State var selectedUIImage: UIImage? = nil
+        
     var body: some View {
         VStack(spacing: 20) {
             imageWithFrame
-            TextField("Enter text", text: $text)
+            TextField(selectedImage == nil ?  "画像を選択してください" : "AIが画像にタイトルをつけています…", text: $text)
                 .padding()
                 .background(Color.gray.opacity(0.1))
                 .clipShape(.rect(cornerRadius: 10))
@@ -66,6 +63,18 @@ struct ContentView: View {
                                         .scaledToFill()
                                         .frame(width: 300, height: 400)
                                         .clipped()
+                                        .onAppear {
+                                            guard let selectedUIImage = selectedUIImage else { return }
+                                            Task {
+                                                do {
+                                                    text = try await client.generateTitle(from: selectedUIImage)
+                                                    print("Generated title: \(text)")
+                                                } catch {
+                                                    print("Error generating title: \(error.localizedDescription)")
+                                                }
+                                            }
+                                        }
+                                            
                                 } else {
                                     Image(systemName: "photo")
                                         .font(.largeTitle)
@@ -96,6 +105,7 @@ struct ContentView: View {
             case .success(let data):
                 if let data = data, let uiImage = UIImage(data: data) {
                     selectedImage = Image(uiImage: uiImage)
+                    selectedUIImage = uiImage
                 } else {
                     selectedImage = nil
                 }

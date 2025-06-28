@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		89A2B2C32E10A88B00CF63CE /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 89A2B2C22E10A88B00CF63CE /* GoogleGenerativeAI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		89A2B22B2E107A5700CF63CE /* PhotoMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A2B2C32E10A88B00CF63CE /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = PhotoMaster;
 			packageProductDependencies = (
+				89A2B2C22E10A88B00CF63CE /* GoogleGenerativeAI */,
 			);
 			productName = PhotoMaster;
 			productReference = 89A2B22B2E107A5700CF63CE /* PhotoMaster.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 89A2B2222E107A5700CF63CE;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				89A2B2C12E10A88B00CF63CE /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 89A2B22C2E107A5700CF63CE /* Products */;
 			projectDirPath = "";
@@ -267,6 +276,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoMaster/Preview Content\"";
 				DEVELOPMENT_TEAM = C9D4LD297U;
 				ENABLE_PREVIEWS = YES;
+				GEMINI_API_KEY = AIzaSyBLz0rCsnZ0Oy050aAtsuRfubU14UU23ek;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoMaster/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "写真を保存します";
@@ -298,6 +308,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoMaster/Preview Content\"";
 				DEVELOPMENT_TEAM = C9D4LD297U;
 				ENABLE_PREVIEWS = YES;
+				GEMINI_API_KEY = AIzaSyBLz0rCsnZ0Oy050aAtsuRfubU14UU23ek;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoMaster/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "写真を保存します";
@@ -341,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		89A2B2C12E10A88B00CF63CE /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		89A2B2C22E10A88B00CF63CE /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89A2B2C12E10A88B00CF63CE /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89A2B2232E107A5700CF63CE /* Project object */;
 }
