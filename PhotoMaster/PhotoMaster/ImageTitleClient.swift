@@ -9,14 +9,12 @@ final class ImageTitleClient {
     private let model: GenerativeModel
     
     init(modelID: String = "gemini-2.0-flash", session: URLSession = .shared) {
-        // 環境変数からAPIキーを取得
-        let env = ProcessInfo.processInfo.environment
-        if let key = env["GEMINI_API_KEY"] ?? env["GOOGLE_API_KEY"] {
-            self.apiKey = key
-        } else {
+        guard let path = Bundle.main.path(forResource: "Secrets", ofType: "plist"),
+              let dict = NSDictionary(contentsOfFile: path),
+              let apiKey = dict["GEMINI_API_KEY"] as? String else {
             fatalError("環境変数 GEMINI_API_KEY または GOOGLE_API_KEY が設定されていません。")
         }
-        
+        self.apiKey = apiKey
         self.model = GenerativeModel(name: "gemini-1.5-flash", apiKey: apiKey)
     }
     

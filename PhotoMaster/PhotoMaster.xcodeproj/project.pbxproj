@@ -276,7 +276,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoMaster/Preview Content\"";
 				DEVELOPMENT_TEAM = C9D4LD297U;
 				ENABLE_PREVIEWS = YES;
-				GEMINI_API_KEY = AIzaSyBLz0rCsnZ0Oy050aAtsuRfubU14UU23ek;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoMaster/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "写真を保存します";
@@ -308,7 +307,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoMaster/Preview Content\"";
 				DEVELOPMENT_TEAM = C9D4LD297U;
 				ENABLE_PREVIEWS = YES;
-				GEMINI_API_KEY = AIzaSyBLz0rCsnZ0Oy050aAtsuRfubU14UU23ek;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoMaster/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "写真を保存します";
