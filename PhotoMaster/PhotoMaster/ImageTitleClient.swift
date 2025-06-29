@@ -8,14 +8,14 @@ final class ImageTitleClient {
     private let apiKey: String
     private let model: GenerativeModel
     
-    init(modelID: String = "gemini-2.0-flash", session: URLSession = .shared) {
+    init(modelID: String = "gemini-1.5-flash", session: URLSession = .shared) {
         guard let path = Bundle.main.path(forResource: "Secrets", ofType: "plist"),
               let dict = NSDictionary(contentsOfFile: path),
               let apiKey = dict["GEMINI_API_KEY"] as? String else {
             fatalError("環境変数 GEMINI_API_KEY または GOOGLE_API_KEY が設定されていません。")
         }
         self.apiKey = apiKey
-        self.model = GenerativeModel(name: "gemini-1.5-flash", apiKey: apiKey)
+        self.model = GenerativeModel(name: modelID, apiKey: apiKey)
     }
     
     
@@ -36,5 +36,6 @@ final class ImageTitleClient {
 extension ImageTitleClient {
     enum ClientError: Error {
         case invalidResponse
+        case invalidImage
     }
 }

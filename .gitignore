@@ -2,7 +2,9 @@
 
 # Build products
 
-PhotoMaster/PhotoMaster/Secrets.plist.plist
+PhotoMaster/PhotoMaster/Secrets.plist
+PhotoMaster/PhotoMaster.xcodeproj/project.pbxproj
+
 
 build/
 DerivedData/
